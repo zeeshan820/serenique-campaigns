@@ -5,6 +5,7 @@ import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { ChevronLeft, ChevronRight, Download, Sparkles, Ruler, Home } from "lucide-react"
+import { DownloadFloorPlanModal } from "@/components/download-floorplan-modal"
 
 export function FloorPlans() {
   const [activeTab, setActiveTab] = useState<"2bedroom" | "3bedroom">("2bedroom")
@@ -213,10 +214,12 @@ export function FloorPlans() {
                 </table>
               </div>
 
-              <Button className="w-full mt-6 sm:mt-8 md:mt-10 bg-gradient-to-r from-[#DAAA97] to-[#c99a87] hover:from-[#e5baa7] hover:to-[#d9aa97] text-white py-5 sm:py-6 md:py-7 text-sm sm:text-base md:text-lg font-bold flex items-center justify-center gap-2 sm:gap-3 shadow-2xl hover:shadow-[#DAAA97]/50 transition-all duration-500 hover:scale-105 rounded-[4px]">
-                <Download className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" />
-                Download Floor Plan
-              </Button>
+              <DownloadFloorPlanModal>
+                <Button className="w-full mt-6 sm:mt-8 md:mt-10 bg-gradient-to-r from-[#DAAA97] to-[#c99a87] hover:from-[#e5baa7] hover:to-[#d9aa97] text-white py-5 sm:py-6 md:py-7 text-sm sm:text-base md:text-lg font-bold flex items-center justify-center gap-2 sm:gap-3 shadow-2xl hover:shadow-[#DAAA97]/50 transition-all duration-500 hover:scale-105 rounded-[4px]">
+                  <Download className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" />
+                  Download Floor Plan
+                </Button>
+              </DownloadFloorPlanModal>
             </div>
           </div>
         </div>

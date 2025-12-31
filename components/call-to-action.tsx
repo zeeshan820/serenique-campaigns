@@ -3,6 +3,8 @@
 import { Button } from "@/components/ui/button"
 import { useEffect, useRef, useState } from "react"
 import { Sparkles, MapPin, Award, Home } from "lucide-react"
+import { BookMeetingModal } from "@/components/book-meeting-modal"
+import { DownloadBrochureModal2 } from "@/components/download-brochure-modal2"
 
 export function CallToAction() {
   const [isVisible, setIsVisible] = useState(false)
@@ -81,20 +83,24 @@ export function CallToAction() {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in animation-delay-500">
-            <Button
-              size="lg"
-              className="bg-[#DAAA97] hover:bg-[#c99a87] text-white px-8 md:px-10 py-5 md:py-6 text-base md:text-lg transform hover:scale-110 transition-all duration-300 shadow-2xl hover:shadow-[#DAAA97]/50 relative overflow-hidden group"
-            >
-              <span className="relative z-10">Book a Meeting</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-2 border-white text-white hover:bg-white hover:text-[#334058] px-8 md:px-10 py-5 md:py-6 text-base md:text-lg bg-transparent transform hover:scale-110 transition-all duration-300 shadow-2xl"
-            >
-              Download Brochure
-            </Button>
+            <BookMeetingModal>
+              <Button
+                size="lg"
+                className="bg-[#DAAA97] hover:bg-[#c99a87] text-white px-8 md:px-10 py-5 md:py-6 text-base md:text-lg transform hover:scale-110 transition-all duration-300 shadow-2xl hover:shadow-[#DAAA97]/50 relative overflow-hidden group"
+              >
+                <span className="relative z-10">Book a Meeting</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+              </Button>
+            </BookMeetingModal>
+            <DownloadBrochureModal2>
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-2 border-white text-white hover:bg-white hover:text-[#334058] px-8 md:px-10 py-5 md:py-6 text-base md:text-lg bg-transparent transform hover:scale-110 transition-all duration-300 shadow-2xl"
+              >
+                Download Brochure
+              </Button>
+            </DownloadBrochureModal2>
           </div>
         </div>
       </div>

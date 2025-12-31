@@ -2,11 +2,13 @@
 
 import { Button } from "@/components/ui/button"
 import { ExpressInterestModal } from "@/components/express-interest-modal"
+import { DownloadBrochureModal3 } from "@/components/download-brochure-modal3"
 import { useEffect, useState } from "react"
 import { Download, Send } from "lucide-react"
 
 export function Hero() {
   const [isVisible, setIsVisible] = useState(false)
+  const [brochureOpen, setBrochureOpen] = useState(false)
 
   useEffect(() => {
     setIsVisible(true)
@@ -17,11 +19,11 @@ export function Hero() {
       <div
         className="absolute inset-0 bg-cover bg-center transition-transform duration-[12000ms] ease-out scale-110"
         style={{
-          backgroundImage: "url('/exterior-7.webp')",
+          backgroundImage: "url('/hero-5.jpg')",
           transform: isVisible ? "scale(1)" : "scale(1.2)",
         }}
       >
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/60" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/60" />
         <div className="absolute inset-0 bg-[#1a1a1a]/20" />
       </div>
 
@@ -59,16 +61,18 @@ export function Hero() {
         </div>
 
         <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center animate-fade-in animation-delay-700">
-          <Button
-            size="lg"
-            className="group relative overflow-hidden bg-gradient-to-r from-[#DAAA97] to-[#c99a87] hover:from-[#e5baa7] hover:to-[#d9aa97] text-white px-6 py-4 sm:px-10 sm:py-7 text-sm sm:text-base font-semibold uppercase tracking-wider rounded-[4px] transform hover:scale-105 transition-all duration-500 shadow-2xl hover:shadow-[#DAAA97]/50"
-          >
-            <span className="relative z-10 flex items-center gap-2 sm:gap-3">
-              <Download className="w-4 h-4 sm:w-5 sm:h-5" />
-              Download Brochure
-            </span>
-            <div className="absolute inset-0 bg-white/20 transform -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
-          </Button>
+          <DownloadBrochureModal3 pdfUrl="/Treppan-Serenique-Brochure.pdf">
+            <Button
+              size="lg"
+              className="group relative overflow-hidden bg-gradient-to-r from-[#DAAA97] to-[#c99a87] hover:from-[#e5baa7] hover:to-[#d9aa97] text-white px-6 py-4 sm:px-10 sm:py-7 text-sm sm:text-base font-semibold uppercase tracking-wider rounded-[4px] transform hover:scale-105 transition-all duration-500 shadow-2xl hover:shadow-[#DAAA97]/50"
+            >
+              <span className="relative z-10 flex items-center gap-2 sm:gap-3">
+                <Download className="w-4 h-4 sm:w-5 sm:h-5" />
+                Download Brochure
+              </span>
+              <div className="absolute inset-0 bg-white/20 transform -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+            </Button>
+          </DownloadBrochureModal3>
           <ExpressInterestModal>
             <Button
               size="lg"
@@ -82,16 +86,15 @@ export function Hero() {
           </ExpressInterestModal>
         </div>
 
-
-        <div className="mt-10 sm:mt-16 grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-8 max-w-3xl mx-auto animate-fade-in animation-delay-800">
+        <div className="mt-10 sm:mt-16 grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-8 max-w-3xl mx-auto animate-fade-in animation-delay-800 items-center justify-center place-items-center">
           {[
             { value: "53+", label: "Resort Amenities" },
-            { value: "90s", label: "From Beach" },
+            { value: "90 seconds", label: "From Beach" },
             { value: "AED 2.9M", label: "Starting Price" },
           ].map((stat, index) => (
             <div key={index} className="group">
               <div className="glass-effect rounded-[4px] p-4 sm:p-6 transform hover:scale-105 transition-all duration-500 hover:bg-white/15">
-                <p className="text-2xl sm:text-4xl font-bold text-white mb-1 sm:mb-2 text-gradient">{stat.value}</p>
+                <p className="text-2xl sm:text-4xl font-bold text-white mb-1 sm:mb-2">{stat.value}</p>
                 <p className="text-xs sm:text-sm text-white/80 uppercase tracking-wider">{stat.label}</p>
               </div>
             </div>

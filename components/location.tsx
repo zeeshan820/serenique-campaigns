@@ -66,9 +66,18 @@ export function Location() {
               />
             </div>
 
-            <Button className="w-full bg-[#DAAA97] hover:bg-[#c99a87] text-white py-5 md:py-6 text-base md:text-lg flex items-center justify-center gap-2 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-              <Navigation className="w-4 md:w-5 h-4 md:h-5" />
-              Get Direction
+            <Button
+              className="w-full bg-[#DAAA97] hover:bg-[#c99a87] text-white py-5 md:py-6 text-base md:text-lg flex items-center justify-center gap-2 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+              asChild
+            >
+              <a
+                href="https://www.google.com/maps?ll=25.301316,55.300532&z=15&t=m&hl=en&gl=IN&mapclient=embed&cid=12100906799396537486"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Navigation className="w-4 md:w-5 h-4 md:h-5" />
+                Get Direction
+              </a>
             </Button>
 
             {/* Quick stats */}

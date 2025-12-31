@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import { useEffect, useRef, useState } from "react"
 import { Download, CheckCircle2, Sparkles } from "lucide-react"
+import { DownloadBrochureModal } from "@/components/download-brochure-modal"
 
 export function Overview() {
   const [isVisible, setIsVisible] = useState(false)
@@ -116,10 +117,12 @@ export function Overview() {
                     AED 2.9M
                   </p>
                 </div>
-                <Button className="group/btn bg-white text-[#334058] hover:bg-[#DAAA97] hover:text-white px-6 py-4 sm:px-8 sm:py-6 text-sm sm:text-base font-bold uppercase tracking-wider rounded-[4px] transform hover:scale-105 transition-all duration-500 shadow-xl whitespace-nowrap">
-                  <Download className="w-5 h-5 mr-2 group-hover/btn:animate-bounce" />
-                  Download Brochure
-                </Button>
+                <DownloadBrochureModal pdfUrl="/Treppan-Serenique-Brochure.pdf">
+                  <Button className="group/btn bg-white text-[#334058] hover:bg-[#DAAA97] hover:text-white px-6 py-4 sm:px-8 sm:py-6 text-sm sm:text-base font-bold uppercase tracking-wider rounded-[4px] transform hover:scale-105 transition-all duration-500 shadow-xl whitespace-nowrap">
+                    <Download className="w-5 h-5 mr-2 group-hover/btn:animate-bounce" />
+                    Download Brochure
+                  </Button>
+                </DownloadBrochureModal>
               </div>
             </div>
           </div>

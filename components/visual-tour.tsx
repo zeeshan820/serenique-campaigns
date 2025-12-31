@@ -44,8 +44,18 @@ export function VisualTour() {
   ]
 
   const interiorImages = [
-    { src: "/luxury-apartment-interior-living.jpg", alt: "Interior Living Room" },
-    { src: "/luxury-apartment-interior-with-golden-curtains.jpg", alt: "Interior with Golden Curtains" },
+    { src: "/interior-01.webp", alt: "Interior View 1" },
+    { src: "/interior-02.webp", alt: "Interior View 2" },
+    { src: "/interior-03.webp", alt: "Interior View 3" },
+    { src: "/interior-04.webp", alt: "Interior View 4" },
+    { src: "/interior-05.webp", alt: "Interior View 5" },
+    { src: "/interior-06.webp", alt: "Interior View 6" },
+    { src: "/interior-07.webp", alt: "Interior View 7" },
+    { src: "/interior-08.webp", alt: "Interior View 8" },
+    { src: "/interior-09.webp", alt: "Interior View 9" },
+    { src: "/interior-10.webp", alt: "Interior View 10" },
+    { src: "/interior-11.webp", alt: "Interior View 11" },
+    { src: "/interior-12.webp", alt: "Interior View 12" },
   ]
 
   const images = activeTab === "exterior" ? exteriorImages : interiorImages
