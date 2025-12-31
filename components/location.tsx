@@ -16,16 +16,20 @@ export function Location() {
   ]
 
   const amenitiesData = [
-    { name: "Deira Mall", time: "5 min", distance: "5.1 km" },
-    { name: "9 Hole Golf Course & Country Club", time: "7 min", distance: "3 km" },
+    { name: "Dubai Islands Mall", time: "5 min", distance: "3 km" },
+    { name: "Golf Course & Country Club", time: "5 min", distance: "3 km" },
     { name: "Waterfront Market", time: "2 min", distance: "500 m" },
     { name: "Centara Mirage Beach Resort", time: "3 min", distance: "1.2 km" },
+    { name: "Water sports & Scuba Diving", time: "2 min", distance: "500 m" },
+    { name: "Dubai Islands Marina", time: "4 min", distance: "2.1 km" },
   ]
 
   const transport = [
     { name: "Sheikh Mohammed Bin Zayed Road", time: "25 min", distance: "21 km" },
     { name: "Al Khail Road", time: "30 min", distance: "34 km" },
-    { name: "Dubai Mall Metro Station", time: "23 min", distance: "26 km" },
+    { name: "Gold Souq Metro Station", time: "12 min", distance: "7.6 km" },
+    { name: "Jumeirah Street (D94)", time: "15 min", distance: "11.6 km" },
+    { name: "Sheikh Zayed Road (E11)", time: "17 min", distance: "15.5 km" },
   ]
 
   const data = activeTab === "landmark" ? landmarks : activeTab === "amenities" ? amenitiesData : transport

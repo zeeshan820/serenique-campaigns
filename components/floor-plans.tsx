@@ -53,12 +53,12 @@ export function FloorPlans() {
   return (
     <section className="py-16 sm:py-20 md:py-24 lg:py-32 bg-gradient-to-b from-white via-gray-50 to-white">
       <div className="container mx-auto px-4 sm:px-6">
-        <div className="text-center">
+        {/* <div className="text-center">
           <div className="inline-flex items-center gap-1 sm:gap-2 px-3 sm:px-6 py-1.5 sm:py-3 rounded-[4px] bg-[#DAAA97]/10 border border-[#DAAA97]/20 mb-4 sm:mb-6">
             <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 text-[#DAAA97]" />
             <p className="text-xs sm:text-sm uppercase tracking-[0.15em] sm:tracking-[0.2em] text-[#DAAA97] font-bold">Floor Plann</p>
           </div>
-        </div>
+        </div> */}
 
         <h2 className="text-xl sm:text-3xl md:text-4xl font-bold text-center mb-6 sm:mb-8 leading-tight text-gray-900 px-4">
           

@@ -67,9 +67,9 @@ export function CallToAction() {
 
           <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 mb-12 animate-fade-in animation-delay-400">
             {[
-              { icon: Home, title: "Smart Homes", desc: "AI-enabled living" },
-              { icon: Award, title: "53+ Amenities", desc: "Resort-style living" },
-              { icon: MapPin, title: "Prime Location", desc: "Dubai Islands" },
+              { icon: Home, title: "Fully Furnished AI-enabled Smart Homes", desc: "Complete AI infrastructure throughout the project" },
+              { icon: Award, title: "53+ Amenities for a Resort Lifestyle", desc: "Endless possibilities for fitness, leisure, tranquility, and entertainment" },
+              { icon: MapPin, title: "Biohacking Lab for Wellness & Longevity", desc: "Curated therapies for healing, anti-ageing, and calmness" },
             ].map((feature, index) => (
               <div
                 key={index}

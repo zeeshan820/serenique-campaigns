@@ -60,10 +60,6 @@ export default function StickyFooter() {
               <span className="font-bold text-base sticky-footer-text">AED 2.9 Million</span>
             </div>
             <div className="flex flex-col leading-tight">
-              <span className="text-base sticky-footer-text"><b>53</b> Resort</span>
-              <span className="font-normal text-base sticky-footer-text"> Amenities</span>
-            </div>
-            <div className="flex flex-col leading-tight">
               <span className="font-bold text-base sticky-footer-text"><b>60/40</b> post handover</span>
               <span className="font-normal text-base sticky-footer-text">payment plan</span>
             </div>

@@ -3,10 +3,10 @@
 import { useState, useEffect, useRef } from "react"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { ChevronLeft, ChevronRight, Sparkles } from "lucide-react"
+import { ChevronLeft, ChevronRight } from "lucide-react"
 
 export function VisualTour() {
-  const [activeTab, setActiveTab] = useState<"exterior" | "interior">("exterior")
+  const [activeTab, setActiveTab] = useState<"exterior" | "interior" | "amenities">("exterior")
   const [isVisible, setIsVisible] = useState(false)
   const [currentIndex, setCurrentIndex] = useState(0)
   const sectionRef = useRef<HTMLDivElement>(null)
@@ -58,7 +58,18 @@ export function VisualTour() {
     { src: "/interior-12.webp", alt: "Interior View 12" },
   ]
 
-  const images = activeTab === "exterior" ? exteriorImages : interiorImages
+  // Amenities tab: show actual images from public/
+  const amenitiesImages = [
+    { src: "/aminities-1.webp", alt: "Amenity 1" },
+    { src: "/aminities-2.webp", alt: "Amenity 2" },
+    { src: "/aminities-3.webp", alt: "Amenity 3" },
+    { src: "/aminities-4.webp", alt: "Amenity 4" },
+    { src: "/aminities-5.webp", alt: "Amenity 5" },
+    { src: "/aminities-6.webp", alt: "Amenity 6" },
+    { src: "/aminities-7.webp", alt: "Amenity 7" },
+    { src: "/aminities-8.webp", alt: "Amenity 8" },
+  ];
+  const images = activeTab === "exterior" ? exteriorImages : activeTab === "interior" ? interiorImages : amenitiesImages;
 
   const nextSlide = () => {
     setCurrentIndex((prev) => (prev + 1) % images.length)
@@ -68,22 +79,14 @@ export function VisualTour() {
     setCurrentIndex((prev) => (prev - 1 + images.length) % images.length)
   }
 
+
   return (
     <section ref={sectionRef} className="py-2 pb-[80px] md:py-32 bg-gradient-to-b from-gray-50 to-white">
       <div className="container mx-auto px-4 md:px-6">
-        <div
-          className={`text-center mb-2 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
-        >
-          <div className="inline-flex items-center gap-1 sm:gap-2 px-3 sm:px-6 py-1.5 sm:py-3 rounded-[4px] bg-[#DAAA97]/10 border border-[#DAAA97]/20 mb-4 sm:mb-6">
-            <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 text-[#DAAA97]" />
-            <p className="text-xs sm:text-sm uppercase tracking-[0.15em] sm:tracking-[0.2em] text-[#DAAA97] font-bold">Visual Highlights</p>
-          </div>
-        </div>
-
-         <h2
+        <h2
           className={`text-xl sm:text-3xl md:text-4xl font-bold text-center mb-10 md:mb-16 lg:mb-20 leading-tight text-gray-900 transition-all duration-1000 delay-100 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
         >
-          Your Visual Tour Starts Here
+          Explore Treppan Serenique Residences
         </h2>
 
         <div
@@ -110,6 +113,17 @@ export function VisualTour() {
             }`}
           >
             Interior
+          </Button>
+          <Button
+            onClick={() => setActiveTab("amenities")}
+            variant={activeTab === "amenities" ? "default" : "outline"}
+            className={`px-6 md:px-8 py-5 md:py-6 text-sm md:text-base transition-all duration-300 transform hover:scale-105 ${
+              activeTab === "amenities"
+                ? "bg-[#DAAA97] hover:bg-[#c99a87] text-white shadow-lg shadow-[#DAAA97]/30"
+                : "text-gray-700 hover:border-[#DAAA97] hover:text-[#DAAA97]"
+            }`}
+          >
+            Amenities
           </Button>
         </div>
 
