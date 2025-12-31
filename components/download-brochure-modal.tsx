@@ -94,7 +94,7 @@ export function DownloadBrochureModal({
         // Create HubSpot form with onFormSubmitted callback
         (window as any).hbspt.forms.create({
           portalId: "49053274",
-          formId: "1b0b460a-dd56-417f-a0c2-061a6ce3f3bc",
+          formId: "4409cad0-4c2d-4fd2-9482-25315148f96f",
           region: "eu1",
           target: `#${targetId}`,
           redirectUrl: '', // Prevent redirect - stay on page

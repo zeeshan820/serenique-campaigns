@@ -53,11 +53,12 @@ export function DownloadBrochureModal3({ children, pdfUrl = "/Treppan-Serenique-
         hideLoaderWhenFormReady();
         (window as any).hbspt.forms.create({
           portalId: "49053274",
-          formId: "1b0b460a-dd56-417f-a0c2-061a6ce3f3bc",
+          formId: "4409cad0-4c2d-4fd2-9482-25315148f96f",
           region: "eu1",
           target: `#${targetId}`,
           redirectUrl: '',
           onFormSubmitted: function() {
+            console.log('Form submitted');
             if (typeof (window as any).gtag === 'function') {
               (window as any).gtag('event', 'conversion', {
                 'send_to': 'AW-17840114502/A1p3COiJ2tkbEMaW6rpC',
