@@ -13,7 +13,7 @@ export function Hero({ isGlobalPage }: { isGlobalPage?: boolean }) {
   const tabs = isGlobalPage ? [
     { value: "53+", label: "Resort Amenities" },
     { value: "90 seconds", label: "From Beach" },
-    { value: "$0.79M", label: "Starting Price" },
+    { value: "$ 790K", label: "Starting Price" },
   ] : [
     { value: "53+", label: "Resort Amenities" },
     { value: "90 seconds", label: "From Beach" },

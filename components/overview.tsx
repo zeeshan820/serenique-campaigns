@@ -8,7 +8,7 @@ import { DownloadBrochureModal } from "@/components/download-brochure-modal"
 
 export function Overview({ isGlobalPage }: { isGlobalPage?: boolean }) {
 
-  const price = isGlobalPage ? "$0.79M" : "AED 2.9 Million";
+  const price = isGlobalPage ? "$ 790K" : "AED 2.9 Million";
 
   const [isVisible, setIsVisible] = useState(false)
   const sectionRef = useRef<HTMLDivElement>(null)

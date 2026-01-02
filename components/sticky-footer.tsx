@@ -10,7 +10,7 @@ import { usePathname } from 'next/navigation';
 export default function StickyFooter() {
   const pathname = usePathname();
   const isGlobalPage = pathname === "/global";
-  const price = isGlobalPage ? "$0.79M" : "AED 2.9 Million";
+  const price = isGlobalPage ? "$ 790K" : "AED 2.9 Million";
 
   // Always show the sticky footer, even at the top (hero section)
   const showFooter = true;
