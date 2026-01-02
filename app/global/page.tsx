@@ -12,8 +12,7 @@ import { Location } from "@/components/location"
 import { ContactForm } from "@/components/contact-form"
 
 export default function Global() {
-  const pathname = usePathname();
-  const isGlobalPage = pathname === "/global";
+  const isGlobalPage = true;
 
   return (
     <main className="min-h-screen">
