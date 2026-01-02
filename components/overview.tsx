@@ -127,6 +127,54 @@ export function Overview() {
             </div>
           </div>
         </div>
+
+        {/* Full Width Payment Plan CTA */}
+        <div className={`mt-12 md:mt-16 lg:mt-20 max-w-7xl mx-auto transition-all duration-1000 delay-500 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
+          <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-[#334058] via-[#3d4d6a] to-[#334058] p-6 sm:p-8 md:p-10">
+            {/* Background decorations */}
+            <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-5" />
+            <div className="absolute -left-20 -top-20 w-60 h-60 bg-[#DAAA97]/20 rounded-full blur-3xl" />
+            <div className="absolute -right-20 -bottom-20 w-60 h-60 bg-[#DAAA97]/10 rounded-full blur-3xl" />
+            
+            <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-10">
+              {/* Left - Title */}
+              <div className="flex items-center gap-4">
+                <div className="hidden sm:flex items-center justify-center w-14 h-14 rounded-full bg-[#DAAA97]/20 border border-[#DAAA97]/40">
+                  <Sparkles className="w-6 h-6 text-[#DAAA97]" />
+                </div>
+                <div>
+                  <p className="text-[#DAAA97] text-xs sm:text-sm font-semibold uppercase tracking-wider mb-1">Exclusive Offer</p>
+                  <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white">60/40 Post Handover Payment Plan</h3>
+                </div>
+              </div>
+              
+              {/* Center - Payment Split */}
+              <div className="flex items-center gap-3 sm:gap-6">
+                <div className="text-center px-4 sm:px-6 py-3 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20">
+                  <div className="flex items-baseline justify-center gap-1">
+                    <span className="text-3xl sm:text-4xl font-black text-[#DAAA97]">60</span>
+                    <span className="text-lg text-[#DAAA97] font-bold">%</span>
+                  </div>
+                  <p className="text-white/80 text-xs sm:text-sm font-medium mt-1">During Construction</p>
+                </div>
+                
+                <div className="flex flex-col items-center gap-1">
+                  <div className="w-8 sm:w-12 h-0.5 bg-gradient-to-r from-transparent via-[#DAAA97] to-transparent" />
+                  <span className="text-[#DAAA97] text-xs font-bold">+</span>
+                  <div className="w-8 sm:w-12 h-0.5 bg-gradient-to-r from-transparent via-[#DAAA97] to-transparent" />
+                </div>
+                
+                <div className="text-center px-4 sm:px-6 py-3 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20">
+                  <div className="flex items-baseline justify-center gap-1">
+                    <span className="text-3xl sm:text-4xl font-black text-[#DAAA97]">40</span>
+                    <span className="text-lg text-[#DAAA97] font-bold">%</span>
+                  </div>
+                  <p className="text-white/80 text-xs sm:text-sm font-medium mt-1">Post Handover</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   )
