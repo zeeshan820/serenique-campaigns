@@ -44,18 +44,18 @@ export function VisualTour() {
   ]
 
   const interiorImages = [
-    { src: "/interior-01.webp", alt: "Interior View 1" },
-    { src: "/interior-02.webp", alt: "Interior View 2" },
-    { src: "/interior-03.webp", alt: "Interior View 3" },
-    { src: "/interior-04.webp", alt: "Interior View 4" },
-    { src: "/interior-05.webp", alt: "Interior View 5" },
-    { src: "/interior-06.webp", alt: "Interior View 6" },
-    { src: "/interior-07.webp", alt: "Interior View 7" },
-    { src: "/interior-08.webp", alt: "Interior View 8" },
-    { src: "/interior-09.webp", alt: "Interior View 9" },
-    { src: "/interior-10.webp", alt: "Interior View 10" },
-    { src: "/interior-11.webp", alt: "Interior View 11" },
-    { src: "/interior-12.webp", alt: "Interior View 12" },
+    { src: "/Interior-01.webp", alt: "Interior View 1" },
+    { src: "/Interior-02.webp", alt: "Interior View 2" },
+    { src: "/Interior-03.webp", alt: "Interior View 3" },
+    { src: "/Interior-04.webp", alt: "Interior View 4" },
+    { src: "/Interior-05.webp", alt: "Interior View 5" },
+    { src: "/Interior-06.webp", alt: "Interior View 6" },
+    { src: "/Interior-07.webp", alt: "Interior View 7" },
+    { src: "/Interior-08.webp", alt: "Interior View 8" },
+    { src: "/Interior-09.webp", alt: "Interior View 9" },
+    { src: "/Interior-10.webp", alt: "Interior View 10" },
+    { src: "/Interior-11.webp", alt: "Interior View 11" },
+    { src: "/Interior-12.webp", alt: "Interior View 12" },
   ]
 
   // Amenities tab: show actual images from public/

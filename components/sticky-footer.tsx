@@ -5,8 +5,13 @@ import '../styles/sticky-footer-custom.css';
 import React, { useEffect, useState } from "react";
 import { FaWhatsapp, FaPhoneAlt } from "react-icons/fa";
 import { RegisterInterestModal } from "@/components/register-interest-modal";
+import { usePathname } from 'next/navigation';
 
 export default function StickyFooter() {
+  const pathname = usePathname();
+  const isGlobalPage = pathname === "/global";
+  const price = isGlobalPage ? "$0.79M" : "AED 2.9 Million";
+
   // Always show the sticky footer, even at the top (hero section)
   const showFooter = true;
 
@@ -52,12 +57,12 @@ export default function StickyFooter() {
               />
             </div>
             <div className="flex flex-col leading-tight">
-              <span className="text-base sticky-footer-text"> <b>2 & 3 BR </b> Fully </span> 
+              <span className="text-base sticky-footer-text"> <b>2 & 3 BR </b> Fully </span>
               <span className="font-normal text-base sticky-footer-text">Furnished Residences</span>
             </div>
             <div className="flex flex-col leading-tight">
               <span className="font-normal text-base sticky-footer-text">Starting from</span>
-              <span className="font-bold text-base sticky-footer-text">AED 2.9 Million</span>
+              <span className="font-bold text-base sticky-footer-text">{price}</span>
             </div>
             <div className="flex flex-col leading-tight">
               <span className="font-bold text-base sticky-footer-text"><b>60/40</b> post handover</span>
