@@ -111,23 +111,20 @@ export function Overview({ isGlobalPage }: { isGlobalPage?: boolean }) {
               <div className="absolute -right-10 -top-10 sm:-right-20 sm:-top-20 w-20 h-20 sm:w-40 sm:h-40 bg-[#DAAA97]/10 rounded-lg blur-3xl" />
 
               <div className="relative z-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 sm:gap-6">
-                <div>
-                  <p className="text-xs sm:text-sm text-white/70 mb-2 uppercase tracking-[0.15em] font-semibold">
-                    Starting From
-                  </p>
-                  <p
-                    className="text-3xl sm:text-4xl md:text-5xl font-bold text-white animate-shimmer bg-linear-to-r from-white via-[#DAAA97] to-white bg-clip-text"
-                    style={{ backgroundSize: "200% auto" }}
-                  >
-                    {price}
-                  </p>
+                <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-8 w-full">
+                  <div className="flex-1 min-w-[180px]">
+                    <p className="text-xs sm:text-sm text-[#DAAA97] mb-1 uppercase tracking-[0.18em] font-bold">Starting From</p>
+                    <div className="flex items-end gap-2">
+                      <span className="text-xl sm:text-2xl md:text-3xl font-semibold text-white bg-gradient-to-r from-white via-[#DAAA97] to-white bg-clip-text text-transparent animate-shimmer" style={{ backgroundSize: '200% auto', lineHeight: '1.1' }}>{price}</span>
+                    </div>
+                  </div>
+                  <DownloadBrochureModal pdfUrl="/Treppan-Serenique-Brochure.pdf">
+                    <Button className="group/btn flex items-center gap-2 bg-[#DAAA97] text-[#334058] hover:bg-white hover:text-[#334058] px-5 py-3 sm:px-7 sm:py-4 text-sm sm:text-base font-bold uppercase tracking-wider rounded-lg shadow-md border border-[#DAAA97] hover:border-[#334058] transition-all duration-300 whitespace-nowrap">
+                      <Download className="w-5 h-5 mr-1 group-hover/btn:animate-bounce" />
+                      Download Brochure
+                    </Button>
+                  </DownloadBrochureModal>
                 </div>
-                <DownloadBrochureModal pdfUrl="/Treppan-Serenique-Brochure.pdf">
-                  <Button className="group/btn bg-white text-[#334058] hover:bg-[#DAAA97] hover:text-white px-6 py-4 sm:px-8 sm:py-6 text-sm sm:text-base font-bold uppercase tracking-wider rounded-lg transform hover:scale-105 transition-all duration-500 shadow-xl whitespace-nowrap">
-                    <Download className="w-5 h-5 mr-2 group-hover/btn:animate-bounce" />
-                    Download Brochure
-                  </Button>
-                </DownloadBrochureModal>
               </div>
             </div>
           </div>
