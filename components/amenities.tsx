@@ -1,6 +1,6 @@
 "use client"
 
-import { Sparkles } from "lucide-react"
+import { Plus, Sparkles } from "lucide-react"
 import Image from "next/image"
 import { useEffect, useRef, useState } from "react"
 
@@ -101,38 +101,58 @@ export function Amenities() {
           </div>
         </div>
 
-        <h2
-          className={`text-[28px] sm:text-[32px] md:text-[36px] lg:text-[40px] font-bold text-center mb-20 leading-tight transition-all duration-1000 delay-100 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
-        >
-          <span className="text-white">53+ Resort-Style Experiences Await</span>
-        </h2>
+        <section>
+          <h2
+            className={`text-[28px] sm:text-[32px] md:text-[36px] lg:text-[40px] font-bold text-center mb-20 leading-tight transition-all duration-1000 delay-100 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
+          >
+            <span className="text-white">53+ Resort-Style Experiences Await</span>
+          </h2>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-          {amenitiesList.map((amenity, index) => (
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {/* Existing Amenities Loop */}
+            {amenitiesList.map((amenity, index) => (
+              <div
+                key={index}
+                className={`group relative p-6 rounded-[4px] glass-effect hover:bg-white/10 border border-white/10 hover:border-[#DAAA97]/50 cursor-pointer transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-[#DAAA97]/20 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+                  }`}
+                style={{ transitionDelay: `${200 + index * 50}ms` }}
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-[#DAAA97]/0 to-[#DAAA97]/10 rounded-[4px] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="relative flex items-center gap-4">
+                  <div className="p-2 rounded-[4px] bg-[#DAAA97]/10 group-hover:bg-[#DAAA97]/20 transition-colors duration-300 flex items-center justify-center">
+                    <Image
+                      src={`/aminities/${getAmenityIcon(amenity)}`}
+                      alt={amenity + " icon"}
+                      width={28}
+                      height={28}
+                      className="group-hover:scale-110 transition-transform duration-300"
+                    />
+                  </div>
+                  <span className="text-white/90 group-hover:text-white font-medium transition-colors duration-300">
+                    {amenity}
+                  </span>
+                </div>
+              </div>
+            ))}
+
+            {/* --- NEW: "& Many More" Card --- */}
             <div
-              key={index}
-              className={`group relative p-6 rounded-[4px] glass-effect hover:bg-white/10 border border-white/10 hover:border-[#DAAA97]/50 cursor-pointer transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-[#DAAA97]/20 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-                }`}
-              style={{ transitionDelay: `${200 + index * 50}ms` }}
+              className={`group relative p-6 rounded-[4px] glass-effect hover:bg-white/10 border border-white/10 hover:border-[#DAAA97]/50 cursor-pointer transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-[#DAAA97]/20 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
+              style={{ transitionDelay: `${200 + amenitiesList.length * 50}ms` }}
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-[#DAAA97]/0 to-[#DAAA97]/10 rounded-[4px] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute inset-0 bg-linear-to-br from-[#DAAA97]/0 to-[#DAAA97]/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <div className="relative flex items-center gap-4">
-                <div className="p-2 rounded-[4px] bg-[#DAAA97]/10 group-hover:bg-[#DAAA97]/20 transition-colors duration-300 flex items-center justify-center">
-                  <Image
-                    src={`/aminities/${getAmenityIcon(amenity)}`}
-                    alt={amenity + " icon"}
-                    width={28}
-                    height={28}
-                    className="group-hover:scale-110 transition-transform duration-300"
-                  />
+                <div className="p-2 rounded-[4px] bg-[#DAAA97]/10 group-hover:bg-[#DAAA97]/20 transition-colors duration-300 flex items-center justify-center h-[44px] w-[44px]"> {/* Fixed dimensions to match icon container size */}
+                  <Plus className="w-7 h-7 text-[#e2a793] group-hover:scale-110 transition-transform duration-300" />
                 </div>
                 <span className="text-white/90 group-hover:text-white font-medium transition-colors duration-300">
-                  {amenity}
+                  & Many More
                 </span>
               </div>
             </div>
-          ))}
-        </div>
+
+          </div>
+        </section>
       </div>
     </section>
   )
