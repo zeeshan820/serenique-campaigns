@@ -65,9 +65,9 @@ export function VisualTour() {
     { src: "/aminities-3.webp", alt: "Amenity 3" },
     { src: "/aminities-4.webp", alt: "Amenity 4" },
     { src: "/aminities-5.webp", alt: "Amenity 5" },
-    { src: "/aminities-6.webp", alt: "Amenity 6" },
-    { src: "/aminities-7.webp", alt: "Amenity 7" },
-    { src: "/aminities-8.webp", alt: "Amenity 8" },
+    { src: "/aminities-6.webp", alt: "Bamboo Oxygen Park" },
+    { src: "/aminities-7.webp", alt: "Male / Female Spa" },
+    { src: "/aminities-8.webp", alt: "Indoor Gym" },
   ];
   const images = activeTab === "exterior" ? exteriorImages : activeTab === "interior" ? interiorImages : amenitiesImages;
 
@@ -95,33 +95,30 @@ export function VisualTour() {
           <Button
             onClick={() => setActiveTab("exterior")}
             variant={activeTab === "exterior" ? "default" : "outline"}
-            className={`px-6 md:px-8 py-5 md:py-6 text-sm md:text-base transition-all duration-300 transform hover:scale-105 ${
-              activeTab === "exterior"
-                ? "bg-[#DAAA97] hover:bg-[#c99a87] text-white shadow-lg shadow-[#DAAA97]/30"
-                : "text-gray-700 hover:border-[#DAAA97] hover:text-[#DAAA97]"
-            }`}
+            className={`px-6 md:px-8 py-5 md:py-6 text-sm md:text-base transition-all duration-300 transform hover:scale-105 ${activeTab === "exterior"
+              ? "bg-[#DAAA97] hover:bg-[#c99a87] text-white shadow-lg shadow-[#DAAA97]/30"
+              : "text-gray-700 hover:border-[#DAAA97] hover:text-[#DAAA97]"
+              }`}
           >
             Exterior
           </Button>
           <Button
             onClick={() => setActiveTab("interior")}
             variant={activeTab === "interior" ? "default" : "outline"}
-            className={`px-6 md:px-8 py-5 md:py-6 text-sm md:text-base transition-all duration-300 transform hover:scale-105 ${
-              activeTab === "interior"
-                ? "bg-[#DAAA97] hover:bg-[#c99a87] text-white shadow-lg shadow-[#DAAA97]/30"
-                : "text-gray-700 hover:border-[#DAAA97] hover:text-[#DAAA97]"
-            }`}
+            className={`px-6 md:px-8 py-5 md:py-6 text-sm md:text-base transition-all duration-300 transform hover:scale-105 ${activeTab === "interior"
+              ? "bg-[#DAAA97] hover:bg-[#c99a87] text-white shadow-lg shadow-[#DAAA97]/30"
+              : "text-gray-700 hover:border-[#DAAA97] hover:text-[#DAAA97]"
+              }`}
           >
             Interior
           </Button>
           <Button
             onClick={() => setActiveTab("amenities")}
             variant={activeTab === "amenities" ? "default" : "outline"}
-            className={`px-6 md:px-8 py-5 md:py-6 text-sm md:text-base transition-all duration-300 transform hover:scale-105 ${
-              activeTab === "amenities"
-                ? "bg-[#DAAA97] hover:bg-[#c99a87] text-white shadow-lg shadow-[#DAAA97]/30"
-                : "text-gray-700 hover:border-[#DAAA97] hover:text-[#DAAA97]"
-            }`}
+            className={`px-6 md:px-8 py-5 md:py-6 text-sm md:text-base transition-all duration-300 transform hover:scale-105 ${activeTab === "amenities"
+              ? "bg-[#DAAA97] hover:bg-[#c99a87] text-white shadow-lg shadow-[#DAAA97]/30"
+              : "text-gray-700 hover:border-[#DAAA97] hover:text-[#DAAA97]"
+              }`}
           >
             Amenities
           </Button>
@@ -167,9 +164,8 @@ export function VisualTour() {
               <button
                 key={index}
                 onClick={() => setCurrentIndex(index)}
-                className={`h-2 md:h-3 rounded-[4px] transition-all duration-300 ${
-                  index === currentIndex ? "bg-[#DAAA97] w-8 md:w-10" : "bg-gray-300 w-2 md:w-3 hover:bg-gray-400"
-                }`}
+                className={`h-2 md:h-3 rounded-[4px] transition-all duration-300 ${index === currentIndex ? "bg-[#DAAA97] w-8 md:w-10" : "bg-gray-300 w-2 md:w-3 hover:bg-gray-400"
+                  }`}
               />
             ))}
           </div>

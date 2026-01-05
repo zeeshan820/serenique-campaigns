@@ -95,10 +95,9 @@ export function Amenities() {
         >
           <div className="inline-flex items-center gap-1 sm:gap-2 px-3 sm:px-6 py-1.5 sm:py-3 rounded-[4px] bg-[#DAAA97]/10 border border-[#DAAA97]/20 mb-4 sm:mb-6">
             <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 text-[#DAAA97]" />
-            <p className="text-xs sm:text-sm uppercase tracking-[0.15em] sm:tracking-[0.2em] text-[#DAAA97] font-bold">Features & Amenities
-
-
-</p>
+            <p className="text-xs sm:text-sm uppercase tracking-[0.15em] sm:tracking-[0.2em] text-[#DAAA97] font-bold">
+              Features & Amenities
+            </p>
           </div>
         </div>
 
@@ -112,9 +111,8 @@ export function Amenities() {
           {amenitiesList.map((amenity, index) => (
             <div
               key={index}
-              className={`group relative p-6 rounded-[4px] glass-effect hover:bg-white/10 border border-white/10 hover:border-[#DAAA97]/50 cursor-pointer transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-[#DAAA97]/20 ${
-                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-              }`}
+              className={`group relative p-6 rounded-[4px] glass-effect hover:bg-white/10 border border-white/10 hover:border-[#DAAA97]/50 cursor-pointer transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-[#DAAA97]/20 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+                }`}
               style={{ transitionDelay: `${200 + index * 50}ms` }}
             >
               <div className="absolute inset-0 bg-gradient-to-br from-[#DAAA97]/0 to-[#DAAA97]/10 rounded-[4px] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
