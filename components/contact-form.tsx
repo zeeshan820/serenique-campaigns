@@ -97,6 +97,7 @@
 
 import React, { useState, useRef, useEffect } from 'react';
 import { Loader2, CheckCircle, AlertCircle, Sparkles, ChevronDown, Search } from 'lucide-react';
+import { countryCodes } from '@/lib/country-code';
 
 interface ContactFormProps {
   isModal?: boolean;
@@ -146,13 +147,13 @@ export function ContactForm({ isModal = false, title, pdfUrl, onSuccess }: Conta
   }, []);
 
   // --- DATA LISTS ---
-  const countryCodes = [
-    { code: '+971', flag: '🇦🇪', name: 'UAE' },
-    { code: '+91', flag: '🇮🇳', name: 'India' },
-    { code: '+1', flag: '🇺🇸', name: 'USA' },
-    { code: '+44', flag: '🇬🇧', name: 'UK' },
-    { code: '+966', flag: '🇸🇦', name: 'KSA' },
-  ];
+  // const countryCodes = [
+  //   { code: '+971', flag: '🇦🇪', name: 'UAE' },
+  //   { code: '+91', flag: '🇮🇳', name: 'India' },
+  //   { code: '+1', flag: '🇺🇸', name: 'USA' },
+  //   { code: '+44', flag: '🇬🇧', name: 'UK' },
+  //   { code: '+966', flag: '🇸🇦', name: 'KSA' },
+  // ];
 
   const personas = ["Buyer", "Broker"];
 
@@ -277,7 +278,7 @@ export function ContactForm({ isModal = false, title, pdfUrl, onSuccess }: Conta
           <div>
             <label className={labelStyle}>Mobile <span className="text-red-400">*</span></label>
             <div className="flex gap-2" ref={countryRef}>
-              <div className="relative w-32">
+              <div className="relative w-40">
                 <button type="button" onClick={() => setIsCountryOpen(!isCountryOpen)} className="w-full h-12 bg-white text-gray-900 rounded-md px-3 flex items-center justify-between focus:ring-2 focus:ring-[#c4a682]">
                   <span className="flex items-center gap-2 text-sm">
                     <span>{countryCodes.find(c => c.code === countryCode)?.flag}</span>
@@ -288,8 +289,9 @@ export function ContactForm({ isModal = false, title, pdfUrl, onSuccess }: Conta
                 {isCountryOpen && (
                   <div className="absolute top-full left-0 w-full mt-1 bg-white rounded-md shadow-lg z-50 py-1 max-h-48 overflow-auto">
                     {countryCodes.map((item) => (
-                      <button key={item.code} type="button" className="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 flex items-center gap-2" onClick={() => { setCountryCode(item.code); setIsCountryOpen(false); }}>
-                        <span>{item.flag}</span><span className="font-medium">{item.code}</span>
+                      <button key={`${item.code}-${item.country}`} type="button" className="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 flex items-center gap-2" onClick={() => { setCountryCode(item.code); setIsCountryOpen(false); }}>
+                        <span>{item.flag}</span>
+                        <span className="font-medium">{item.code}</span>
                       </button>
                     ))}
                   </div>
