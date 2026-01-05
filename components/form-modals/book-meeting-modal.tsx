@@ -1,14 +1,13 @@
-
 import React, { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { Button } from "@/components/ui/button";
 
-export function ExpressInterestModal({ children }: { children?: React.ReactNode }) {
+export function BookMeetingModal({ children }: { children?: React.ReactNode }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [scriptLoaded, setScriptLoaded] = useState(false);
   const [formCreated, setFormCreated] = useState(false);
   const [mounted, setMounted] = useState(false);
-  const targetId = "hubspot-form-container";
+  const targetId = "hubspot-meeting-form-container";
 
   // Ensure component is mounted before using portal
   useEffect(() => {
@@ -74,8 +73,8 @@ export function ExpressInterestModal({ children }: { children?: React.ReactNode 
       {children ? (
         <span onClick={openModal} style={{ display: "inline-block", cursor: "pointer" }}>{children}</span>
       ) : (
-        <Button onClick={openModal} size="lg" className="group relative overflow-hidden bg-white/10 backdrop-blur-xl border-2 border-white/50 text-white hover:bg-white hover:text-[#334058] hover:border-white px-6 py-4 sm:px-10 sm:py-7 text-sm sm:text-base font-semibold uppercase tracking-wider rounded-[4px] transform hover:scale-105 transition-all duration-500 shadow-2xl">
-          <span className="relative z-10 flex items-center gap-2 sm:gap-3">Express Interest</span>
+        <Button onClick={openModal} size="lg" className="group relative overflow-hidden bg-white/10 backdrop-blur-xl border-2 border-white/50 text-white hover:bg-white hover:text-[#334058] hover:border-white px-6 py-4 sm:px-10 sm:py-7 text-sm sm:text-base font-semibold uppercase tracking-wider rounded-lg transform hover:scale-105 transition-all duration-500 shadow-2xl">
+          <span className="relative z-10 flex items-center gap-2 sm:gap-3">Book a Meeting</span>
         </Button>
       )}
 
@@ -97,8 +96,8 @@ export function ExpressInterestModal({ children }: { children?: React.ReactNode 
               {/* Header */}
               <div className="flex items-center justify-between px-6 py-5 border-b border-gray-100 bg-gradient-to-r from-slate-800 to-slate-700">
                 <div>
-                  <h2 className="text-xl font-bold text-white">Express Interest</h2>
-                  <p className="text-sm text-slate-300">We will get back to you soon.</p>
+                  <h2 className="text-xl font-bold text-white">Book a Meeting</h2>
+                  <p className="text-sm text-slate-300">Schedule a call with our team.</p>
                 </div>
                 <button onClick={closeModal} className="p-2 rounded-full hover:bg-white/10 text-white/70 hover:text-white transition-colors">
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

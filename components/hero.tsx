@@ -1,10 +1,11 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { ExpressInterestModal } from "@/components/express-interest-modal"
+import { ExpressInterestModal } from "@/components/form-modals/express-interest-modal"
 import { DownloadBrochureModal3 } from "@/components/download-brochure-modal3"
 import { useEffect, useState } from "react"
 import { Download, Send } from "lucide-react"
+import { Modal } from "./form-modals/common-form-modal"
 
 export function Hero({ isGlobalPage }: { isGlobalPage?: boolean }) {
   const [isVisible, setIsVisible] = useState(false);
@@ -45,7 +46,7 @@ export function Hero({ isGlobalPage }: { isGlobalPage?: boolean }) {
           }`}
       >
         {/* <div className="mb-6 animate-fade-in">
-          <div className="inline-block px-6 py-2 rounded-[4px] bg-white/10 backdrop-blur-xl border border-white/20 mb-6">
+          <div className="inline-block px-6 py-2 rounded-lg bg-white/10 backdrop-blur-xl border border-white/20 mb-6">
             <p className="text-sm font-semibold text-white uppercase tracking-[0.2em]">
               Dubai Islands • Launching Soon
             </p>
@@ -70,7 +71,7 @@ export function Hero({ isGlobalPage }: { isGlobalPage?: boolean }) {
         </div>
 
         <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center animate-fade-in animation-delay-700">
-          <DownloadBrochureModal3 pdfUrl="/Treppan-Serenique-Brochure.pdf">
+          {/* <DownloadBrochureModal3 pdfUrl="/Treppan-Serenique-Brochure.pdf">
             <Button
               size="lg"
               className="group relative overflow-hidden bg-linear-to-r from-[#DAAA97] to-[#c99a87] hover:from-[#e5baa7] hover:to-[#d9aa97] text-white px-6 py-4 sm:px-10 sm:py-7 text-sm sm:text-base font-semibold uppercase tracking-wider rounded-lg transform hover:scale-105 transition-all duration-500 shadow-2xl hover:shadow-[#DAAA97]/50"
@@ -92,7 +93,14 @@ export function Hero({ isGlobalPage }: { isGlobalPage?: boolean }) {
                 Express Interest
               </span>
             </Button>
-          </ExpressInterestModal>
+          </ExpressInterestModal> */}
+          <Modal
+            title="Download Brochure"
+            pdfUrl="/Treppan-Serenique-Brochure.pdf"
+          />
+          <Modal
+            title="Express Interest"
+          />
         </div>
 
         <div className="mt-10 sm:mt-16 grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-8 max-w-3xl mx-auto animate-fade-in animation-delay-800 items-center justify-center place-items-center">

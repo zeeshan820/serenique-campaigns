@@ -5,6 +5,7 @@ import Image from "next/image"
 import { useEffect, useRef, useState } from "react"
 import { Download, Sparkles, Waves, TreePalm, Droplets, Wind, Brain, Zap, Home } from "lucide-react"
 import { DownloadBrochureModal } from "@/components/download-brochure-modal"
+import { Modal } from "./form-modals/common-form-modal"
 
 export function Overview({ isGlobalPage }: { isGlobalPage?: boolean }) {
 
@@ -51,7 +52,7 @@ export function Overview({ isGlobalPage }: { isGlobalPage?: boolean }) {
         <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-gradient-to-tr from-[#334058]/10 via-[#334058]/5 to-transparent rounded-full blur-3xl animate-pulse" style={{ animationDuration: '5s' }} />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-radial from-[#DAAA97]/5 to-transparent rounded-full" />
       </div>
-      
+
       {/* Decorative Lines */}
       {/* <div className="absolute top-20 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#DAAA97]/20 to-transparent" /> */}
       {/* <div className="absolute bottom-20 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#334058]/20 to-transparent" /> */}
@@ -66,7 +67,7 @@ export function Overview({ isGlobalPage }: { isGlobalPage?: boolean }) {
             </div>
             <p className="text-sm uppercase tracking-[0.25em] text-[#DAAA97] font-bold">Overview</p>
           </div>
-          
+
           <h2 className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight transition-all duration-1000 delay-100 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
             <span className="bg-gradient-to-r from-[#334058] via-[#4a5d7a] to-[#334058] bg-clip-text text-transparent">A Sanctuary of Serenity</span>
             <br />
@@ -91,7 +92,7 @@ export function Overview({ isGlobalPage }: { isGlobalPage?: boolean }) {
                 <div className="hidden md:block absolute inset-0 bg-gradient-to-t from-[#334058]/90 via-[#334058]/30 to-transparent" />
                 <div className="hidden md:block absolute inset-0 bg-gradient-to-r from-[#334058]/50 via-transparent to-transparent" />
               </div>
-              
+
               {/* Floating Content on Image - Desktop Only */}
               <div className="hidden md:block absolute bottom-0 left-0 right-0 p-8 md:p-12">
                 <div className="max-w-3xl space-y-4">
@@ -100,7 +101,7 @@ export function Overview({ isGlobalPage }: { isGlobalPage?: boolean }) {
                   </p>
                 </div>
               </div>
-              
+
               {/* Corner Accents - Desktop Only */}
               <div className="hidden md:block absolute top-4 left-4 w-12 h-12 border-l-2 border-t-2 border-[#DAAA97]/60 rounded-tl-xl" />
               <div className="hidden md:block absolute top-4 right-4 w-12 h-12 border-r-2 border-t-2 border-[#DAAA97]/60 rounded-tr-xl" />
@@ -149,17 +150,17 @@ export function Overview({ isGlobalPage }: { isGlobalPage?: boolean }) {
                 <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#DAAA97] to-transparent rounded-full" />
               </span>
             </h3>
-            
+
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6">
               {features.map((feature, index) => (
-                <div 
+                <div
                   key={index}
                   className={`group relative p-5 sm:p-6 rounded-2xl bg-white border border-gray-100 shadow-lg hover:shadow-2xl hover:shadow-[#DAAA97]/20 transition-all duration-500 hover:-translate-y-2 overflow-hidden ${index === features.length - 1 && features.length % 2 !== 0 ? 'sm:col-span-2 lg:col-span-1' : ''}`}
                   style={{ transitionDelay: `${index * 50}ms` }}
                 >
                   {/* Hover Gradient Background */}
                   <div className="absolute inset-0 bg-gradient-to-br from-[#DAAA97]/10 via-transparent to-[#334058]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  
+
                   {/* Icon Container */}
                   <div className="relative mb-4">
                     <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#DAAA97]/20 to-[#DAAA97]/5 flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 border border-[#DAAA97]/20">
@@ -167,11 +168,11 @@ export function Overview({ isGlobalPage }: { isGlobalPage?: boolean }) {
                     </div>
                     <div className="absolute -top-1 -right-1 w-3 h-3 bg-[#DAAA97] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-ping" />
                   </div>
-                  
+
                   {/* Content */}
                   <h4 className="font-bold text-[#334058] mb-2 group-hover:text-[#DAAA97] transition-colors duration-300">{feature.title}</h4>
                   <p className="text-gray-600 text-sm leading-relaxed">{feature.desc}</p>
-                  
+
                   {/* Bottom Line Accent */}
                   <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-[#DAAA97] to-[#334058] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
                 </div>
@@ -201,14 +202,18 @@ export function Overview({ isGlobalPage }: { isGlobalPage?: boolean }) {
                   </div>
                   <p className="text-white/60 text-sm mt-2">Premium Seaview Residences</p>
                 </div>
-                
-                <DownloadBrochureModal pdfUrl="/Treppan-Serenique-Brochure.pdf">
+
+                {/* <DownloadBrochureModal pdfUrl="/Treppan-Serenique-Brochure.pdf">
                   <Button className="group/btn relative flex items-center gap-3 bg-[#DAAA97] text-[#334058] hover:bg-white px-8 py-5 sm:px-10 sm:py-6 text-base sm:text-lg font-bold uppercase tracking-wider rounded-2xl shadow-xl shadow-[#DAAA97]/30 hover:shadow-white/30 border-2 border-[#DAAA97] hover:border-white transition-all duration-500 overflow-hidden">
                     <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/30 to-white/0 -translate-x-full group-hover/btn:translate-x-full transition-transform duration-700" />
                     <Download className="w-5 h-5 group-hover/btn:animate-bounce relative z-10" />
                     <span className="relative z-10">Download Brochure</span>
                   </Button>
-                </DownloadBrochureModal>
+                </DownloadBrochureModal> */}
+                <Modal
+                  title="Download Brochure"
+                  pdfUrl="/Treppan-Serenique-Brochure.pdf"
+                />
               </div>
             </div>
           </div>
@@ -221,7 +226,7 @@ export function Overview({ isGlobalPage }: { isGlobalPage?: boolean }) {
             <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-5" />
             <div className="absolute -left-32 -top-32 w-80 h-80 bg-[#DAAA97]/20 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '3s' }} />
             <div className="absolute -right-32 -bottom-32 w-80 h-80 bg-[#DAAA97]/15 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '4s' }} />
-            
+
             <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12">
               {/* Left - Title */}
               <div className="flex items-center gap-5">
@@ -233,7 +238,7 @@ export function Overview({ isGlobalPage }: { isGlobalPage?: boolean }) {
                   <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">60/40 Post Handover Plan</h3>
                 </div>
               </div>
-              
+
               {/* Center - Payment Split */}
               <div className="flex items-center gap-4 sm:gap-8">
                 <div className="text-center px-6 sm:px-8 py-4 sm:py-5 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 shadow-xl hover:bg-white/15 hover:scale-105 transition-all duration-300">
@@ -243,7 +248,7 @@ export function Overview({ isGlobalPage }: { isGlobalPage?: boolean }) {
                   </div>
                   <p className="text-white/70 text-xs sm:text-sm font-medium mt-2">During Construction</p>
                 </div>
-                
+
                 <div className="flex flex-col items-center gap-2">
                   <div className="w-10 sm:w-16 h-0.5 bg-gradient-to-r from-transparent via-[#DAAA97] to-transparent" />
                   <div className="w-8 h-8 rounded-full bg-[#DAAA97]/20 flex items-center justify-center border border-[#DAAA97]/40">
@@ -251,7 +256,7 @@ export function Overview({ isGlobalPage }: { isGlobalPage?: boolean }) {
                   </div>
                   <div className="w-10 sm:w-16 h-0.5 bg-gradient-to-r from-transparent via-[#DAAA97] to-transparent" />
                 </div>
-                
+
                 <div className="text-center px-6 sm:px-8 py-4 sm:py-5 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 shadow-xl hover:bg-white/15 hover:scale-105 transition-all duration-300">
                   <div className="flex items-baseline justify-center gap-1">
                     <span className="text-4xl sm:text-5xl font-black bg-gradient-to-b from-[#DAAA97] to-[#c99b86] bg-clip-text text-transparent">40</span>

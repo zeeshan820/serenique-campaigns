@@ -74,7 +74,7 @@ export function RegisterInterestModal({ children }: { children?: React.ReactNode
       {children ? (
         <span onClick={openModal} style={{ cursor: "pointer" }}>{children}</span>
       ) : (
-        <Button onClick={openModal} size="lg" className="group relative overflow-hidden bg-white/10 backdrop-blur-xl border-2 border-white/50 text-white hover:bg-white hover:text-[#334058] hover:border-white px-6 py-4 sm:px-10 sm:py-7 text-sm sm:text-base font-semibold uppercase tracking-wider rounded-[4px] transform hover:scale-105 transition-all duration-500 shadow-2xl">
+        <Button onClick={openModal} size="lg" className="group relative overflow-hidden bg-white/10 backdrop-blur-xl border-2 border-white/50 text-white hover:bg-white hover:text-[#334058] hover:border-white px-6 py-4 sm:px-10 sm:py-7 text-sm sm:text-base font-semibold uppercase tracking-wider rounded-lg transform hover:scale-105 transition-all duration-500 shadow-2xl">
           <span className="relative z-10 flex items-center gap-2 sm:gap-3">Register Interest</span>
         </Button>
       )}

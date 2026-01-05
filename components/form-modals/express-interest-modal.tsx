@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { Button } from "@/components/ui/button";
 
-export function BookMeetingModal({ children }: { children?: React.ReactNode }) {
+export function ExpressInterestModal({ children }: { children?: React.ReactNode }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [scriptLoaded, setScriptLoaded] = useState(false);
   const [formCreated, setFormCreated] = useState(false);
@@ -73,7 +73,7 @@ export function BookMeetingModal({ children }: { children?: React.ReactNode }) {
       {children ? (
         <span onClick={openModal} style={{ display: "inline-block", cursor: "pointer" }}>{children}</span>
       ) : (
-        <Button onClick={openModal} size="lg" className="group relative overflow-hidden bg-white/10 backdrop-blur-xl border-2 border-white/50 text-white hover:bg-white hover:text-[#334058] hover:border-white px-6 py-4 sm:px-10 sm:py-7 text-sm sm:text-base font-semibold uppercase tracking-wider rounded-[4px] transform hover:scale-105 transition-all duration-500 shadow-2xl">
+        <Button onClick={openModal} size="lg" className="group relative overflow-hidden bg-white/10 backdrop-blur-xl border-2 border-white/50 text-white hover:bg-white hover:text-[#334058] hover:border-white px-6 py-4 sm:px-10 sm:py-7 text-sm sm:text-base font-semibold uppercase tracking-wider rounded-lg transform hover:scale-105 transition-all duration-500 shadow-2xl">
           <span className="relative z-10 flex items-center gap-2 sm:gap-3">Book a Meeting</span>
         </Button>
       )}
@@ -82,17 +82,17 @@ export function BookMeetingModal({ children }: { children?: React.ReactNode }) {
       {mounted && createPortal(
         <>
           {/* Backdrop - Full screen overlay */}
-          <div 
-            className={`fixed inset-0 z-[99999] bg-[#000000b3] transition-opacity duration-300 ${isModalOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`} 
+          <div
+            className={`fixed inset-0 z-[99999] bg-[#000000b3] transition-opacity duration-300 ${isModalOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
             onClick={closeModal}
           ></div>
           {/* Modal wrapper */}
-          <div className={`fixed inset-0 z-[100000] flex items-center justify-center p-4 transition-all duration-300 ${isModalOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}> 
+          <div className={`fixed inset-0 z-[100000] flex items-center justify-center p-4 transition-all duration-300 ${isModalOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
             {/* Modal Container */}
-            <div 
+            <div
               className={`relative w-full max-w-md bg-white rounded-2xl shadow-2xl overflow-hidden transition-all duration-300 transform ${isModalOpen ? 'scale-100 translate-y-0' : 'scale-95 translate-y-8'}`}
               onClick={(e) => e.stopPropagation()}
-            > 
+            >
               {/* Header */}
               <div className="flex items-center justify-between px-6 py-5 border-b border-gray-100 bg-gradient-to-r from-slate-800 to-slate-700">
                 <div>

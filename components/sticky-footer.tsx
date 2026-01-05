@@ -4,8 +4,9 @@ import '../styles/sticky-footer-custom.css';
 
 import React, { useEffect, useState } from "react";
 import { FaWhatsapp, FaPhoneAlt } from "react-icons/fa";
-import { RegisterInterestModal } from "@/components/register-interest-modal";
+import { RegisterInterestModal } from './form-modals/register-interest-modal';
 import { usePathname } from 'next/navigation';
+import { Modal } from './form-modals/common-form-modal';
 
 export default function StickyFooter() {
   const pathname = usePathname();
@@ -69,18 +70,17 @@ export default function StickyFooter() {
               <span className="font-normal text-base sticky-footer-text">payment plan</span>
             </div>
           </div>
-          <RegisterInterestModal>
+          {/* <RegisterInterestModal>
             <button className="bg-white text-[#10616C] font-bold px-6 py-3 rounded-none shadow-none border-none min-w-[180px] text-base whitespace-nowrap ml-4 sticky-footer-button">REGISTER INTEREST</button>
-          </RegisterInterestModal>
+          </RegisterInterestModal> */}
+          <Modal title="Register Interest" />
         </div>
       </div>
       {/* Mobile & Tablet: Only button, centered and boxed */}
       <div className="flex lg:hidden justify-center items-center w-full px-2">
-        <div className="w-full max-w-xs mx-auto">
-          <RegisterInterestModal>
-            <button className="bg-white text-[#10616C] font-bold px-6 py-3 rounded-none shadow-none border-none min-w-[180px] text-base w-full">REGISTER INTEREST</button>
-          </RegisterInterestModal>
-        </div>
+        {/* <div className="w-full max-w-xs mx-auto"> */}
+        <Modal title="Register Interest" />
+        {/* </div> */}
       </div>
     </footer>
   );

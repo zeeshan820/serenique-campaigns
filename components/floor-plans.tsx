@@ -215,7 +215,7 @@ export function FloorPlans() {
               </div>
 
               <DownloadFloorPlanModal>
-                <Button className="w-full mt-6 sm:mt-8 md:mt-10 bg-gradient-to-r from-[#DAAA97] to-[#c99a87] hover:from-[#e5baa7] hover:to-[#d9aa97] text-white py-5 sm:py-6 md:py-7 text-sm sm:text-base md:text-lg font-bold flex items-center justify-center gap-2 sm:gap-3 shadow-2xl hover:shadow-[#DAAA97]/50 transition-all duration-500 hover:scale-105 rounded-[4px]">
+                <Button className="w-full mt-6 sm:mt-8 md:mt-10 bg-linear-to-r from-[#DAAA97] to-[#c99a87] hover:from-[#e5baa7] hover:to-[#d9aa97] text-white py-5 sm:py-6 md:py-7 text-sm sm:text-base md:text-lg font-bold flex items-center justify-center gap-2 sm:gap-3 shadow-2xl hover:shadow-[#DAAA97]/50 transition-all duration-500 hover:scale-105 rounded-[4px]">
                   <Download className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" />
                   Download Floor Plan
                 </Button>

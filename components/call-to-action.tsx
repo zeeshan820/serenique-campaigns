@@ -3,8 +3,9 @@
 import { Button } from "@/components/ui/button"
 import { useEffect, useRef, useState } from "react"
 import { Sparkles, MapPin, Award, Home } from "lucide-react"
-import { BookMeetingModal } from "@/components/book-meeting-modal"
+import { BookMeetingModal } from "@/components/form-modals/book-meeting-modal"
 import { DownloadBrochureModal2 } from "@/components/download-brochure-modal2"
+import { Modal } from "./form-modals/common-form-modal"
 
 export function CallToAction() {
   const [isVisible, setIsVisible] = useState(false)
@@ -30,12 +31,12 @@ export function CallToAction() {
   return (
     <section
       ref={sectionRef}
-      className="relative py-24 md:py-32 bg-gradient-to-br from-[#3d5a80] via-[#4a6890] to-[#5a7a9f] overflow-hidden"
+      className="relative py-24 md:py-32 bg-linear-to-br from-[#3d5a80] via-[#4a6890] to-[#5a7a9f] overflow-hidden"
     >
       <div className="absolute inset-0 opacity-20">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-white rounded-[4px] blur-3xl animate-float" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#DAAA97] rounded-[4px] blur-3xl animate-float-delayed" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-blue-300 rounded-[4px] blur-3xl animate-pulse-slow" />
+        <div className="absolute top-20 left-10 w-72 h-72 bg-white rounded-lg blur-3xl animate-float" />
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#DAAA97] rounded-lg blur-3xl animate-float-delayed" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-blue-300 rounded-lg blur-3xl animate-pulse-slow" />
       </div>
 
       <div
@@ -48,11 +49,11 @@ export function CallToAction() {
           className={`max-w-4xl mx-auto transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
         >
           <div className="flex justify-center animate-fade-in">
-            <div className="inline-flex items-center gap-1 sm:gap-2 px-3 sm:px-6 py-1.5 sm:py-3 rounded-[4px] bg-[#DAAA97]/10 border border-[#DAAA97]/20 mb-4 sm:mb-6">
-            <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 text-[#DAAA97]" />
-            <p className="text-xs sm:text-sm uppercase tracking-[0.15em] sm:tracking-[0.2em] text-[#DAAA97] font-bold">UAE's First Longevity Living Community
-</p>
-          </div>
+            <div className="inline-flex items-center gap-1 sm:gap-2 px-3 sm:px-6 py-1.5 sm:py-3 rounded-lg bg-[#DAAA97]/10 border border-[#DAAA97]/20 mb-4 sm:mb-6">
+              <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 text-[#DAAA97]" />
+              <p className="text-xs sm:text-sm uppercase tracking-[0.15em] sm:tracking-[0.2em] text-[#DAAA97] font-bold">UAE's First Longevity Living Community
+              </p>
+            </div>
           </div>
 
           <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-6 text-center animate-fade-in animation-delay-200 leading-tight">
@@ -82,8 +83,8 @@ export function CallToAction() {
             ))}
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in animation-delay-500">
-            <BookMeetingModal>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center text-center align-middle animate-fade-in animation-delay-500">
+            {/* <BookMeetingModal>
               <Button
                 size="lg"
                 className="bg-[#DAAA97] hover:bg-[#c99a87] text-white px-8 md:px-10 py-5 md:py-6 text-base md:text-lg transform hover:scale-110 transition-all duration-300 shadow-2xl hover:shadow-[#DAAA97]/50 relative overflow-hidden group"
@@ -100,7 +101,9 @@ export function CallToAction() {
               >
                 Download Brochure
               </Button>
-            </DownloadBrochureModal2>
+            </DownloadBrochureModal2> */}
+            <Modal title="Book a meeting" />
+            <Modal title="Download Brochure" pdfUrl="/Treppan-Serenique-Brochure.pdf" />
           </div>
         </div>
       </div>
