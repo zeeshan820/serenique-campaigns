@@ -81,7 +81,7 @@ export function VisualTour() {
 
 
   return (
-    <section ref={sectionRef} className="py-2 pb-[80px] md:py-32 bg-gradient-to-b from-gray-50 to-white">
+    <section ref={sectionRef} className=" pb-[80px] md:py-32 bg-gradient-to-b from-gray-50 to-white">
       <div className="container mx-auto px-4 md:px-6">
         <h2
           className={`text-xl sm:text-3xl md:text-4xl font-bold text-center mb-10 md:mb-16 lg:mb-20 leading-tight text-gray-900 transition-all duration-1000 delay-100 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}

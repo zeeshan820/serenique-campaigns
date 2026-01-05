@@ -15,10 +15,11 @@ export default function Home() {
       <Overview />
       <VisualTour />
       <CallToAction />
-      <Amenities />
       <FloorPlans />
       <Location />
+      <Amenities />
       <ContactForm />
+
     </main>
   )
 }
