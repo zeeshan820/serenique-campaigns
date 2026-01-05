@@ -1,7 +1,5 @@
-"use client"
-
-import { usePathname } from "next/navigation"
-
+"use client";
+import React, { useEffect, useState } from 'react';
 import { Hero } from "@/components/hero"
 import { Overview } from "@/components/overview"
 import { VisualTour } from "@/components/visual-tour"
@@ -11,7 +9,7 @@ import { FloorPlans } from "@/components/floor-plans"
 import { Location } from "@/components/location"
 import { ContactForm } from "@/components/contact-form"
 
-export default function Global() {
+const Globalpage = () => {
   const isGlobalPage = true;
 
   return (
@@ -27,3 +25,5 @@ export default function Global() {
     </main>
   )
 }
+
+export default Globalpage;
