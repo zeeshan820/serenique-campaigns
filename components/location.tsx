@@ -10,29 +10,29 @@ export function Location() {
 
   // Sorted ascending by distance (as in image)
   const landmarks = [
-    { name: "Dubai Islands Beach", time: "2 min", distance: "500 m" },
-    { name: "Deira Islands Marina", time: "4 min", distance: "2.1 km" },
-    { name: "Downtown Dubai and DIFC", time: "20 min", distance: "21 km" },
-    { name: "Dubai International Airport", time: "23 min", distance: "21 km" },
+    { name: "Dubai Islands Beach", time: "2 min", distance: "500 m", icon: '/location/landmark/locationiconsvg-01.svg' },
+    { name: "Dubai Islands Marina", time: "4 min", distance: "2.1 km", icon: '/location/landmark/locationiconsvg-04.svg' },
+    { name: "Downtown Dubai and DIFC", time: "20 min", distance: "21 km", icon: '/location/landmark/locationiconsvg-03.svg' },
+    { name: "Dubai International Airport", time: "23 min", distance: "21 km", icon: '/location/landmark/locationiconsvg-02.svg' },
   ]
 
   // Sorted ascending by distance
   const amenitiesData = [
-    { name: "Waterfront Market", time: "2 min", distance: "500 m" },
-    { name: "Water sports & Scuba Diving", time: "2 min", distance: "500 m" },
-    { name: "Centara Mirage Beach Resort", time: "3 min", distance: "1.2 km" },
-    { name: "Dubai Islands Marina", time: "4 min", distance: "2.1 km" },
-    { name: "Dubai Islands Mall", time: "5 min", distance: "3 km" },
-    { name: "Golf Course & Country Club", time: "5 min", distance: "3 km" },
+    { name: "Waterfront Market", time: "2 min", distance: "500 m", icon: '/location/amenities/locationiconsvg-07.svg' },
+    { name: "Water sports & Scuba Diving", time: "2 min", distance: "500 m", icon: '/location/amenities/locationiconsvg-10.svg' },
+    { name: "Centara Mirage Beach Resort", time: "3 min", distance: "1.2 km", icon: '/location/amenities/locationiconsvg-09.svg' },
+    { name: "Dubai Islands Marina", time: "4 min", distance: "2.1 km", icon: '/location/amenities/locationiconsvg-08.svg' },
+    { name: "Dubai Islands Mall", time: "5 min", distance: "3 km", icon: '/location/amenities/locationiconsvg-08.svg' },
+    { name: "Golf Course & Country Club", time: "5 min", distance: "3 km", icon: '/location/amenities/locationiconsvg-06.svg' },
   ]
 
   // Sorted ascending by distance
   const transport = [
-    { name: "Gold Souq Metro Station", time: "12 min", distance: "7.6 km" },
-    { name: "Jumeirah Street (D94)", time: "15 min", distance: "11.6 km" },
-    { name: "Sheikh Zayed Road (E11)", time: "17 min", distance: "15.5 km" },
-    { name: "Sheikh Mohammed Bin Zayed Road", time: "25 min", distance: "21 km" },
-    { name: "Al Khail Road", time: "30 min", distance: "34 km" },
+    { name: "Gold Souq Metro Station", time: "12 min", distance: "7.6 km", icon: '/location/transport/locationiconsvg-11.svg' },
+    { name: "Jumeirah Street (D94)", time: "15 min", distance: "11.6 km", icon: '/location/transport/locationiconsvg-14.svg' },
+    { name: "Sheikh Zayed Road (E11)", time: "17 min", distance: "15.5 km", icon: '/location/transport/locationiconsvg-13.svg' },
+    { name: "Sheikh Mohammed Bin Zayed Road", time: "25 min", distance: "21 km", icon: '/location/transport/locationiconsvg-13.svg' },
+    { name: "Al Khail Road", time: "30 min", distance: "34 km", icon: '/location/transport/locationiconsvg-14.svg' },
   ]
 
   const data = activeTab === "landmark" ? landmarks : activeTab === "amenities" ? amenitiesData : transport
@@ -138,8 +138,9 @@ export function Location() {
                   className="flex flex-col sm:flex-row items-start sm:items-center justify-between p-2 sm:p-4 md:p-5 bg-gradient-to-r from-gray-50 to-white rounded-lg border border-gray-100 hover:border-[#DAAA97]/50 hover:shadow-md transition-all duration-300 group gap-2 sm:gap-3"
                 >
                   <div className="flex items-center gap-2 md:gap-4 flex-1 min-w-0">
-                    <div className="bg-[#DAAA97]/10 p-1 sm:p-2 md:p-3 rounded-lg group-hover:bg-[#DAAA97]/20 transition-colors flex-shrink-0">
-                      <MapPin className="w-4 md:w-5 h-4 md:h-5 text-[#DAAA97]" />
+                    <div className="bg-[#DAAA97]/10 rounded-lg group-hover:bg-[#DAAA97]/20 transition-colors flex-shrink-0">
+                      {/* <MapPin className="w-4 md:w-5 h-4 md:h-5 text-[#DAAA97]" /> */}
+                      <Image src={item.icon} alt={item.name} width={50} height={50} className="w-12 md:w-12 h-12 md:h-12 p-0 text-[#DAAA97]" />
                     </div>
                     <span className="font-semibold text-gray-900 text-xs sm:text-sm md:text-base truncate">{item.name}</span>
                   </div>

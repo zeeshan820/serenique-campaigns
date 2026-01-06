@@ -33,42 +33,44 @@ export function VisualTour() {
   }, [activeTab])
 
   const exteriorImages = [
-    { src: "/exterior-1.jpg", alt: "Exterior View 1" },
-    { src: "/exterior-2.webp", alt: "Exterior View 2" },
-    { src: "/exterior-3.webp", alt: "Exterior View 3" },
-    { src: "/exterior-4.webp", alt: "Exterior View 4" },
-    { src: "/exterior-5.webp", alt: "Exterior View 5" },
-    { src: "/exterior-6.webp", alt: "Exterior View 6" },
-    { src: "/exterior-7.webp", alt: "Exterior View 7" },
-    { src: "/exterior-8.webp", alt: "Exterior View 8" },
+    { src: "/exterior-1.jpg", alt: "Podium View" },
+    { src: "/exterior-2.webp", alt: "Amenities View" },
+    // { src: "/exterior-3.webp", alt: "Exterior View 3" },
+    // { src: "/exterior-4.webp", alt: "Exterior View 4" },
+    { src: "/exterior-5.webp", alt: "Seaview from Balcony" },
+    // { src: "/exterior-6.webp", alt: "Exterior View 6" },
+    { src: "/exterior-7.webp", alt: "Front Facade" },
+    // { src: "/exterior-8.webp", alt: "Exterior View 8" },
   ]
 
   const interiorImages = [
-    { src: "/Interior-01.webp", alt: "Interior View 1" },
-    { src: "/Interior-02.webp", alt: "Interior View 2" },
-    { src: "/Interior-03.webp", alt: "Interior View 3" },
-    { src: "/Interior-04.webp", alt: "Interior View 4" },
-    { src: "/Interior-05.webp", alt: "Interior View 5" },
-    { src: "/Interior-06.webp", alt: "Interior View 6" },
-    { src: "/Interior-07.webp", alt: "Interior View 7" },
-    { src: "/Interior-08.webp", alt: "Interior View 8" },
-    { src: "/Interior-09.webp", alt: "Interior View 9" },
-    { src: "/Interior-10.webp", alt: "Interior View 10" },
-    { src: "/Interior-11.webp", alt: "Interior View 11" },
-    { src: "/Interior-12.webp", alt: "Interior View 12" },
+    { src: "/Interior-01.webp", alt: "3 BR - Bedroom" },
+    { src: "/Interior-02.webp", alt: "3 BR - Living Room" },
+    { src: "/Interior-03.webp", alt: "3 BR - Bathroom" },
+    { src: "/Interior-04.webp", alt: "3 BR - Dining Area and Living Room" },
+    { src: "/Interior-05.webp", alt: "2 BR - Bedroom" },
+    { src: "/Interior-06.webp", alt: "2 BR - Living Room" },
+    { src: "/Interior-07.webp", alt: "2 BR - Entrance Lobby" },
+    { src: "/Interior-08.webp", alt: "2 BR - Bathroom" },
+    { src: "/Interior-09.webp", alt: "Living Room" },
+    // { src: "/Interior-10.webp", alt: "Interior View 10" },
+    // { src: "/Interior-11.webp", alt: "Interior View 11" },
+    // { src: "/Interior-12.webp", alt: "Interior View 12" },
   ]
 
   // Amenities tab: show actual images from public/
   const amenitiesImages = [
-    { src: "/aminities-1.webp", alt: "Amenity 1" },
-    { src: "/aminities-2.webp", alt: "Amenity 2" },
-    { src: "/aminities-3.webp", alt: "Amenity 3" },
-    { src: "/aminities-4.webp", alt: "Amenity 4" },
-    { src: "/aminities-5.webp", alt: "Amenity 5" },
+    { src: "/aminities-1.webp", alt: "Seaview Rooftop Infinity Pool" },
+    { src: "/aminities-2.webp", alt: "Balcony Jacuzzi" },
+    { src: "/aminities-3.webp", alt: "Rooftop Lounge" },
+    { src: "/aminities-4.webp", alt: "10th Floor Private Courtyard" },
+    { src: "/aminities-5.webp", alt: "Podium Infinity Pool" },
     { src: "/aminities-6.webp", alt: "Bamboo Oxygen Park" },
     { src: "/aminities-7.webp", alt: "Male / Female Spa" },
     { src: "/aminities-8.webp", alt: "Indoor Gym" },
+    { src: "/exterior-3.webp", alt: "Wall Climbing" },
   ];
+
   const images = activeTab === "exterior" ? exteriorImages : activeTab === "interior" ? interiorImages : amenitiesImages;
 
   const nextSlide = () => {
