@@ -10,7 +10,7 @@ export function Location() {
 
   // Sorted ascending by distance (as in image)
   const landmarks = [
-    { name: "Dubai Islands Beach", time: "2 min", distance: "500 m", icon: '/location/landmark/locationiconsvg-01.svg' },
+    { name: "Dubai Islands Beach", time: "90 sec", distance: "500 m", icon: '/location/landmark/locationiconsvg-01.svg' },
     { name: "Dubai Islands Marina", time: "4 min", distance: "2.1 km", icon: '/location/landmark/locationiconsvg-04.svg' },
     { name: "Downtown Dubai and DIFC", time: "20 min", distance: "21 km", icon: '/location/landmark/locationiconsvg-03.svg' },
     { name: "Dubai International Airport", time: "23 min", distance: "21 km", icon: '/location/landmark/locationiconsvg-02.svg' },

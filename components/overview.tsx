@@ -60,13 +60,13 @@ export function Overview({ isGlobalPage }: { isGlobalPage?: boolean }) {
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
         {/* Header Section */}
         <div className={`text-center mb-16 md:mb-20 transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
-          <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-[#DAAA97]/20 via-[#DAAA97]/10 to-[#DAAA97]/20 border border-[#DAAA97]/30 mb-6 backdrop-blur-sm shadow-lg shadow-[#DAAA97]/10">
+          {/* <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-[#DAAA97]/20 via-[#DAAA97]/10 to-[#DAAA97]/20 border border-[#DAAA97]/30 mb-6 backdrop-blur-sm shadow-lg shadow-[#DAAA97]/10">
             <div className="relative">
               <Sparkles className="w-4 h-4 text-[#DAAA97] animate-pulse" />
               <div className="absolute inset-0 w-4 h-4 bg-[#DAAA97] rounded-full blur-md opacity-50 animate-ping" />
             </div>
             <p className="text-sm uppercase tracking-[0.25em] text-[#DAAA97] font-bold">Overview</p>
-          </div>
+          </div> */}
 
           <h2 className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight transition-all duration-1000 delay-100 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
             <span className="bg-gradient-to-r from-[#334058] via-[#4a5d7a] to-[#334058] bg-clip-text text-transparent">A Sanctuary of Serenity</span>
