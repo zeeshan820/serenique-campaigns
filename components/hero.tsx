@@ -58,7 +58,7 @@ export function Hero({ isGlobalPage }: { isGlobalPage?: boolean }) {
         <div className="mb-6">
           <div className="inline-block animate-fade-in animation-delay-200">
             <img
-              src="/serenique-new-logo.png"
+              src="/serenique-new-logo.webp"
               alt="Treppan Serenique"
               className="mx-auto w-80 sm:w-96 md:w-180 object-contain drop-shadow-2xl"
             />
