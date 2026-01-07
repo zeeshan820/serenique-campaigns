@@ -13,12 +13,14 @@ export function Hero({ isGlobalPage }: { isGlobalPage?: boolean }) {
   // const [brochureOpen, setBrochureOpen] = useState(false);
   const tabs = isGlobalPage ? [
     { value: "53+", label: "Resort Amenities" },
-    { value: "90 seconds", label: "From Beach" },
+    { value: "90&nbsp;Sec.", label: "From Beach" },
     { value: "$ 790K", label: "Starting Price" },
+    { value: "2 & 3 BR", label: "Fully furnished" },
   ] : [
     { value: "53+", label: "Resort Amenities" },
-    { value: "90 seconds", label: "From Beach" },
+    { value: "90&nbsp;Sec.", label: "From Beach" },
     { value: "AED 2.9M", label: "Starting Price" },
+    { value: "2 & 3 BR", label: "Fully furnished" },
   ];
 
   useEffect(() => {
@@ -103,11 +105,11 @@ export function Hero({ isGlobalPage }: { isGlobalPage?: boolean }) {
           />
         </div>
 
-        <div className="mt-10 sm:mt-16 grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-8 max-w-3xl mx-auto animate-fade-in animation-delay-800 items-center justify-center place-items-center">
+        <div className="mt-10 sm:mt-16 grid grid-cols-1 sm:grid-cols-4 gap-4 sm:gap-8 max-w-5xl mx-auto animate-fade-in animation-delay-800 items-center justify-center place-items-center">
           {tabs.map((stat, index) => (
             <div key={index} className="group">
               <div className="glass-effect rounded-lg p-4 sm:p-6 transform hover:scale-105 transition-all duration-500 hover:bg-white/15">
-                <p className="text-2xl sm:text-4xl font-bold text-white mb-1 sm:mb-2">{stat.value}</p>
+                <p className="text-2xl sm:text-4xl font-bold text-white mb-1 sm:mb-2" dangerouslySetInnerHTML={{ __html: stat.value }} />
                 <p className="text-xs sm:text-sm text-white/80 uppercase tracking-wider">{stat.label}</p>
               </div>
             </div>
