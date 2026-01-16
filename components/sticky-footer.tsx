@@ -10,7 +10,7 @@ import { Modal } from './form-modals/common-form-modal';
 
 export default function StickyFooter() {
   const pathname = usePathname();
-  const isGlobalPage = pathname === "/global";
+  const isGlobalPage = pathname === "/global/index.html" || pathname === "/global/" || pathname === "/global";
   const price = isGlobalPage ? "$ 790K" : "AED 2.9 Million";
 
   // Always show the sticky footer, even at the top (hero section)
