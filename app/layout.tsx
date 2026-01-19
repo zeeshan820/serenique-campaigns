@@ -67,7 +67,12 @@ export default function RootLayout({
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
+            
+            // Google Analytics 4 Config
             gtag('config', 'G-Q8BN12RWX2');
+            
+            // Google Ads Config (Added per request)
+            gtag('config', 'AW-17840114502');
           `}
         </Script>
 

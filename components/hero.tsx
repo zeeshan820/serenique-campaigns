@@ -1,10 +1,6 @@
 "use client"
 
-import { Button } from "@/components/ui/button"
-import { ExpressInterestModal } from "@/components/form-modals/express-interest-modal"
-import { DownloadBrochureModal3 } from "@/components/download-brochure-modal3"
 import { useEffect, useState } from "react"
-import { Download, Send } from "lucide-react"
 import { Modal } from "./form-modals/common-form-modal"
 
 export function Hero({ isGlobalPage }: { isGlobalPage?: boolean }) {

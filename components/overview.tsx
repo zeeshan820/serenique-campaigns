@@ -1,10 +1,8 @@
 "use client"
 
-import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import { useEffect, useRef, useState } from "react"
-import { Download, Sparkles, Waves, TreePalm, Droplets, Wind, Brain, Zap, Home } from "lucide-react"
-import { DownloadBrochureModal } from "@/components/download-brochure-modal"
+import { Sparkles, Waves, TreePalm, Droplets, Wind, Brain, Zap, Home } from "lucide-react"
 import { Modal } from "./form-modals/common-form-modal"
 
 export function Overview({ isGlobalPage }: { isGlobalPage?: boolean }) {

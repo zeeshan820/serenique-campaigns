@@ -112,6 +112,9 @@ export function ContactForm({ isModal = false, title, pdfUrl, onSuccess }: Conta
   const FORM_ID = "4409cad0-4c2d-4fd2-9482-25315148f96f";
   const PERSONA_FIELD_NAME = "sales_contact_type";
 
+  // --- GOOGLE ADS CONFIGURATION ---
+  const G_ADS_ID = "AW-17840114502/A1p3COiJ2tkbEMaW6rpC";
+
   // --- STATE ---
   const [formData, setFormData] = useState({
     name: '',
@@ -198,6 +201,18 @@ export function ContactForm({ isModal = false, title, pdfUrl, onSuccess }: Conta
       );
 
       if (response.ok) {
+        // ---------------------------------------------------------
+        // 1. FIRE GOOGLE ADS CONVERSION EVENT
+        // ---------------------------------------------------------
+        if (typeof window !== 'undefined' && (window as any).gtag) {
+          (window as any).gtag('event', 'conversion', {
+            'send_to': G_ADS_ID,
+            'value': 1.0,
+            'currency': 'AED'
+          });
+          console.log("Google Ads Conversion Fired:", G_ADS_ID);
+        }
+
         setStatus('success');
         setFormData({ name: '', email: '', phone: '', persona: '' });
 

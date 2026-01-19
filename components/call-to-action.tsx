@@ -1,10 +1,7 @@
 "use client"
 
-import { Button } from "@/components/ui/button"
 import { useEffect, useRef, useState } from "react"
 import { Sparkles, MapPin, Award, Home } from "lucide-react"
-import { BookMeetingModal } from "@/components/form-modals/book-meeting-modal"
-import { DownloadBrochureModal2 } from "@/components/download-brochure-modal2"
 import { Modal } from "./form-modals/common-form-modal"
 
 export function CallToAction() {
